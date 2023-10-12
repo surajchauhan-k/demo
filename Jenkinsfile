@@ -2,6 +2,7 @@ pipeline {
   agent {
       docker { image 'python:3.10.12-slim'}
   }
+stages {
   stage('SCM') {
     git branch: 'main',
     url: 'https://github.com/surajchauhan-k/demo.git'
@@ -23,4 +24,5 @@ pipeline {
       -Dsonar.sources=. "
     }
   }
+}
 }
