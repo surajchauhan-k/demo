@@ -1,6 +1,9 @@
 pipeline {
   agent {
-      docker { image 'python:3.10.12-slim'}
+      docker { 
+        image 'python:3.10.12-slim'
+         args '-u root:sudo' 
+      }
   }
 stages {
   stage('SCM') {
