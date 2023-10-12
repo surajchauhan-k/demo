@@ -14,7 +14,7 @@ stages {
   }
   stage('run test'){
     steps {
-      sh "python -m coverage run -m pytest && coverage xml "
+      sh "python -m coverage run -m pytest && python -m coverage xml "
     }
   }
   stage('SonarQube Analysis') {
