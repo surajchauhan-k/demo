@@ -14,7 +14,7 @@ stages {
   }
   stage('run test'){
     steps {
-      sh "python -m coverage run -m pytest && python -m coverage-reports/coverage.xml --junitxml=xunit-reports/xunit-result.xml "
+      sh "python -m coverage run -m pytest && python -m coverage xml && python -m pytest --cov  --junitxml=xunit-reports/xunit-result.xml "
     }
   }
   stage('SonarQube Analysis') {
